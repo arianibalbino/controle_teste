@@ -1,0 +1,97 @@
+@import '../../assets/styles/variables.scss';
+@import '../../assets/styles/mixins.scss';
+
+.search-container {
+  margin-top: 1em;
+  bottom: -26px;
+  position: absolute;
+  width: 100%;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include adjustSearchBar {
+    height: 46px;
+    margin-top: .1em;
+  }
+  @include extraLargePhone {
+    height: 44px;
+  }
+
+  .search-form {
+    border-radius: 1em;
+    z-index: 10;
+    width: 700px;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, .2);
+
+    @include tableBreak {
+      width: 530px;
+    }
+    @include adjustSearchBar {
+      width: 380px;
+    }
+    @include extraLargePhone {
+      width: 340px;
+    }
+    @include largeSmartPhone {
+      width: 84%;
+    }
+
+    input[type="text"] {
+      width: 650px;
+      height: 100%;
+      border: none;
+      padding: .5em 1em;
+      border-top-right-radius: 1em;
+      border-bottom-right-radius: 1em;
+      font-size: 1rem;
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-top-left-radius: 1em;
+      border-bottom-left-radius: 1em;
+      height: 100%;
+      width: 50px;
+      border: none;
+      cursor: pointer;
+      background-color: rgb(231, 231, 231);
+
+      @include tableBreak {
+        width: 74px;
+      }
+      @include adjustSearchBar {
+        width: 92px;
+      }
+      @include extraLargePhone {
+        width: 100px;
+      }
+      @include largeSmartPhone {
+        width: 118px;
+      }
+      @include smallSmartPhone {
+        width: 150px;
+      }
+      
+      img {
+        height: 50%;
+        width: 50%;
+        @include tableBreak {
+          width: 45%;
+          height: 45%;
+        }
+        @include smallSmartPhone {
+          width: 48%;
+          height: 48%;
+        }
+      }
+    }
+  }
+}

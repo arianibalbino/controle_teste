@@ -1,0 +1,51 @@
+@import '../../assets/styles/variables.scss';
+@import '../../assets/styles/global.scss';
+@import '../../assets/styles/mixins.scss';
+
+.dashboard-page-container {
+  height: 100vh;
+  position: relative;
+  background-color: $lightGray;
+  overflow-x: hidden;
+
+  .sales-dashboard-content {
+    background-color: $lightGray;
+    padding-top: .4em ;
+    padding-bottom: 1.2em ;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+
+    .dashboard-information {
+      margin-top: 1em;
+      font-size: 1.4rem;
+      color: #3a3a3a;
+      text-align: center;
+
+      @include extraLargePhone {
+        font-size: 1.2rem;
+        width: 90%;
+      }
+    }
+
+    .dashboard-table {
+      margin-top: 2em;
+      // bottom: 1em;
+      width: 800px;
+    }
+
+    .dashboard-table {
+      width: 800px;
+
+      @include tableBreak {
+        width: 570px;
+      }
+      @include adjustSearchBar {
+        width: 468px;
+      }
+      @include extraLargePhone {
+        width: 92%;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@import '../../../assets/styles/mixins.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4em;
+  height: 104px;
+  width: 100%;
+  align-items: center;
+
+  @include smallDesktop {
+    padding: 2.5em 2.3em;
+    height: 72px;
+  }
+
+  @include largeSmartPhone {
+    padding: 0 1.33em;
+    height: 72px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  &__logo {
+    font-size: 1.5rem;
+ 
+  }
+}
