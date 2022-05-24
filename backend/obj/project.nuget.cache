@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tTZW8q5g8pqbvsP7Tw0tugbW/Qi7E+I/GmFN3VxEQIhJUQOaxXpC40EmO71WWKjIcr2oNrEg4oZZ4rwVgIHG1Q==",
+  "dgSpecHash": "8LoIK1C9hwHFabKBjvVhs7r6pdp+IhhN6/Mwp44tzWnflLperXpFKVWSAOg6xG2ApeWL7luEq4vTYpsEN1+J1g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ariani\\Documents\\GitHub\\bctdevaca\\backend\\backend.csproj",
+  "projectFilePath": "C:\\Users\\Ariani\\Documents\\GitHub\\controle_teste\\backend\\backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ariani\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\Ariani\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

@@ -45,6 +45,7 @@
         align-items: center;
         height: 100%;
         margin-bottom: 6em;
+        padding-bottom: 6em;
     
         @include adjustImage {
           width: 370px;
@@ -116,6 +117,7 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
+          padding-top: 20px;
 
           @include largeTablet {
             flex-direction: column;
@@ -143,6 +145,8 @@
           }
         }
       }
+ 
+   
     
       .illustration {
         position: absolute;

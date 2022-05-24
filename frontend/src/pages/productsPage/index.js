@@ -32,7 +32,7 @@ export function ProductsPage() {
             headers: { Authorization: authorizationBearer() } 
           });
           const data = await response.data;
-  
+  console.log(data);
           setProducts(data);
           return data
 
@@ -51,6 +51,9 @@ export function ProductsPage() {
       return
     }
     try {
+      newProduct.price = parseFloat (newProduct.price);
+      newProduct.amount = parseInt (newProduct.amount);
+      
       console.log(newProduct)
       const response = await api.post("/Products", 
       newProduct, 
