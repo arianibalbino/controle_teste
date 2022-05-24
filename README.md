@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 ## Funcionalidades
 * Cadastro de usuário;
@@ -23,6 +23,8 @@
 ### Back-end (API Rest):
 * .Net Core 3.1;
 * Banco de dados InMemory;
+* dotnet restore
+* dotnet watch run
 
 ## Observações
 * Para visualizar as estatísticas é necessário vender pelo menos 5 produtos diferentes;
@@ -30,81 +32,6 @@
 * Há uma opção nas tabelas pra exportar o contéudo em PDF ou CSV;
 * Como a API foi construída utilizando um banco de dados InMemory, a reinicialização da mesma acarreta na perda dos dados registrados;
 
-## Procedimentos para rodar a aplicação localmente
-Primeiramente, baixe o repositório
-```zsh
-  git clone https://github.com/matheusmosca/teste-inhalt.git
-  cd teste-inhalt
-  # Ou baixe o arquivo ZIP
-```
-### Front-end
-Pré-requisitos:
-* Nodejs 12.18.2 ou superior (LTS);
-* Yarn 1.22.4
-```zsh
-  # Caso não tenha yarn instalado é possível instalar desta forma
-  npm i yarn -g
-  # Certifique-se de estar no diretório do projeto
-  # Mude para o diretório do frontend
-  cd frontend
-  # Caso queria abrir no VS code
-  code . 
-  # instale as dependências
-  yarn install
-  # Para iniciar a aplicação basta executar:
-  yarn start
-```
-### Back-end
-Pré-requisitos:
-* .NET core 3.1 instalado
-```zsh
-  # Certifique-se de estar no diretório do projeto
-  # Mude para o diretório do backend
-  cd backend
-  # Caso queria abrir no VS code  
-  code .
-  
-  # instale as dependências
-  dotnet restore
-  
-  # Para iniciar a API basta executar:
-  dotnet watch run
-```
-=======
-# controle_teste
 
-### Executar front:
-react js normal 
-Nodejs 12.18.2 ou superior (LTS);
-Yarn 1.22.4
-  #### Caso não tenha yarn instalado é possível instalar desta forma
-  npm i yarn -g
-  ##### Certifique-se de estar no diretório do projeto
-  ##### Mude para o diretório do frontend
-  cd frontend
-  ##### Caso queria abrir no VS code
-  code . 
-  ##### instale as dependências
-  yarn install
-  ###### Para iniciar a aplicação basta executar:
-  yarn start
-  ou
-npm install
-npm start
 
-### Executar back
-.net
-.NET core 3.1 instalado (baixar a parte)
-  ###### Certifique-se de estar no diretório do projeto
-  ###### Mude para o diretório do backend
-  cd backend
-  ###### Caso queria abrir no VS code  
-  code .
-  
-  ###### instale as dependências
-  dotnet restore
-  
-  ###### Para iniciar a API basta executar:
-  dotnet watch run
-
->>>>>>> 7c134d32cc947002ed6f35c357858b263506930e
+ 
