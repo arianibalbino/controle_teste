@@ -13,7 +13,7 @@ namespace backend.Models
 
         [Required(ErrorMessage = "Campo obrigatório")]
         [Range(1, int.MaxValue, ErrorMessage= "O preço não pode ser negativo")]
-        public decimal Price { get; set; }
+        public decimal  Price { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório")]
         [Range(0, int.MaxValue, ErrorMessage= "Não há produtos em estoque suficiente para realizar a operação")]

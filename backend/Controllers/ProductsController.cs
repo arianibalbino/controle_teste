@@ -34,7 +34,23 @@ namespace backend.Controllers
                 return BadRequest(ModelState);
             }
         }
+
+        [HttpPut]
+        [Route("")]
+        [Authorize]
+        public async Task<ActionResult<Product>> Put([FromServices] DataContext context, [FromBody] Product product)
+        {
+            if (ModelState.IsValid) {
+                product.SalesCount = 0;
+                context.Products.Update(product);
+                await context.SaveChangesAsync();
+                return product;
+            } else {
+                return BadRequest(ModelState);
+            }
+        }
     }
+
 
 
 }

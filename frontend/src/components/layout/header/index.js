@@ -6,6 +6,7 @@ import './header.scss';
 import { RectangularButton } from '../rectangularButton';
 import { useAuth } from '../../../contexts/Auth';
 import logo from '../../../assets/svgs/logo-remove.png';
+import bota from '../../../assets/svgs/logout_icon.png'
 
 export function Header({ hideButton }) {
   const { handleSignOut } = useAuth();
@@ -19,6 +20,9 @@ export function Header({ hideButton }) {
           </Link>
         </div>
         <Link to="/">
+          <img>
+          src={}
+          </img>
           <RectangularButton onClickEffect={ handleSignOut } buttonText="Logout" hide={ hideButton }/>
         </Link>
     </header>  

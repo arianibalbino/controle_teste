@@ -68,6 +68,28 @@ export function ProductsPage() {
     }
   }
 
+  async function updateProduct(newProduct) {
+    if(newProduct.price < 0 || newProduct.amount < 0) {
+      swal("Operação inválida", "Preços e estoques não podem ser negativos", "warning");
+      return
+    }
+    try {
+      newProduct.price = parseFloat (newProduct.price);
+      newProduct.amount = parseInt (newProduct.amount);
+      
+      console.log(newProduct)
+      const response = await api.put("/Products", 
+      newProduct, 
+      { headers: { Authorization: authorizationBearer() }});
+
+      
+      console.log(response)
+    } catch(error) {
+      console.log(error);
+      swal("Erro", "Campos preenchidos incorretamente.", "error")
+      return error.response
+    }
+  }
   return (
     <section className="dashboard-page-container">
       { saleProduct && toggle && <PopUpForm product={ saleProduct } toggle={ togglePopUp } refetch={ fetchProductsAgain } /> }
@@ -78,9 +100,9 @@ export function ProductsPage() {
         <div className="dashboard-table">
           <MaterialTable
             columns={[
-              { title: 'Nome', field: 'name' },
-              { title: 'Preço', field: 'price', type: 'numeric' },
-              { title: 'Estoque', field: 'amount', type: 'numeric' },
+              { title: 'Nome', field: 'name', },
+              { title: 'Preço', field: 'price', type: 'numeric', editable:"always"  },
+              { title: 'Estoque', field: 'amount', type: 'numeric', editable:"always"  },
               { title: 'Vendas', field: 'salesCount', type: 'numeric', editable: "never" }
             ]}
             data={ filterProducts(products) }
@@ -88,6 +110,7 @@ export function ProductsPage() {
               {
                 icon: 'shopping_bag',
                 tooltip: 'Vender produto',
+               
                 onClick: (event, rowData) => { 
                   if(rowData.amount <= 0) {
                     swal("Operação inválida", "Produto esgotado.", "warning")
@@ -96,6 +119,7 @@ export function ProductsPage() {
                   setSaleProduct({ ...rowData });
                   togglePopUp();
                 },
+             
 
               }
             ]}
@@ -110,6 +134,18 @@ export function ProductsPage() {
                   resolve();
                   createProduct(newProduct);
                 }, 600);
+              }),
+              onRowUpdate: (newData, oldData) =>
+              new Promise((resolve, reject) => {
+                setTimeout(() => {
+                  const dataUpdate = [...products];
+                  const index = oldData.tableData.id;
+                  dataUpdate[index] = newData;
+                  setProducts([...dataUpdate]);
+                  updateProduct(newData);
+    
+                  resolve();
+                }, 1000)
               }),
             }}
             title="Produtos"
