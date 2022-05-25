@@ -20,10 +20,7 @@ export function Header({ hideButton }) {
           </Link>
         </div>
         <Link to="/">
-          <img>
-          src={}
-          </img>
-          <RectangularButton onClickEffect={ handleSignOut } buttonText="Logout" hide={ hideButton }/>
+            <RectangularButton onClickEffect={ handleSignOut } buttonText="Logout" hide={ hideButton }/>
         </Link>
     </header>  
   )
